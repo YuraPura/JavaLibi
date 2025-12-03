@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Математические операции в Java</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script defer src="../scripts/scripts.js"></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="../index.html">JavaLib</a>
+            <button class="nav-toggle" aria-label="Меню">☰</button>
+            <nav class="nav" id="site-nav">
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+<article class="article card fade-in">
+    <header>
+        <h1 class="article__title">Математические операции в Java</h1>
+    </header>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">1. Основные арифметические операторы</h2>
+        <p>Java поддерживает следующие арифметические операции:</p>
+
+        <ul class="list list_unordered">
+            <li><strong>Сложение (<code>+</code>)</strong><br>
+                <pre class="code"><code class="language-java">int sum = a + b;</code></pre></li>
+            <li><strong>Вычитание (<code>-</code>)</strong><br>
+                <pre class="code"><code class="language-java">int difference = a - b;</code></pre></li>
+            <li><strong>Умножение (<code>*</code>)</strong><br>
+                <pre class="code"><code class="language-java">int product = a * b;</code></pre></li>
+            <li><strong>Деление (<code>/</code>)</strong><br>
+                <pre class="code"><code class="language-java">int quotient = a / b; // целочисленное деление
+double quotientDouble = (double) a / b; // с плавающей точкой</code></pre></li>
+            <li><strong>Остаток от деления (<code>%</code>)</strong><br>
+                <pre class="code"><code class="language-java">int remainder = a % b;</code></pre></li>
+        </ul>
+
+        <h3 class="article__subsubtitle">Пример использования арифметических операторов</h3>
+        <pre class="code"><code class="language-java">public class ArithmeticDemo {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 3;
+        System.out.println("Сумма: " + (a + b));         // 13
+        System.out.println("Разность: " + (a - b));      // 7
+        System.out.println("Произведение: " + (a * b));  // 30
+        System.out.println("Частное: " + (a / b));       // 3
+        System.out.println("Остаток: " + (a % b));       // 1
+    }
+}</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">2. Операторы инкремента и декремента</h2>
+        <ul class="list list_unordered">
+            <li><strong>Постфиксный инкремент (<code>a++</code>)</strong> – сначала возвращает, потом увеличивает</li>
+            <li><strong>Префиксный инкремент (<code>++a</code>)</strong> – сначала увеличивает, потом возвращает</li>
+            <li>Декремент работает аналогично (<code>a--</code>, <code>--a</code>)</li>
+        </ul>
+
+        <h3 class="article__subsubtitle">Пример</h3>
+        <pre class="code"><code class="language-java">int a = 5;
+    System.out.println(a++); // 5 (a стало 6)
+    System.out.println(++a); // 7 (a стало 7)</code></pre>

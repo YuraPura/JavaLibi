@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Получение данных от пользователя в Java</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script defer src="../scripts/scripts.js"></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="../index.html">JavaLib</a>
+            <button class="nav-toggle" aria-label="Меню">☰</button>
+            <nav class="nav" id="site-nav">
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+<article class="article card fade-in">
+    <header>
+        <h1 class="article__title">Получение данных от пользователя в Java</h1>
+    </header>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">Импорт класса Scanner</h2>
+        <pre class="code"><code class="language-java">import java.util.Scanner;</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">Создание объекта Scanner</h2>
+        <pre class="code"><code class="language-java">Scanner scan = new Scanner(System.in);</code></pre>
+        <ul class="list list_unordered">
+            <li><code>scan</code> — имя переменной (можно любое)</li>
+            <li><code>System.in</code> — ввод с клавиатуры</li>
+        </ul>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">Чтение данных от пользователя</h2>
+
+        <h3 class="article__subsubtitle">Считывание строки</h3>
+        <pre class="code"><code class="language-java">System.out.print("Введите ваше имя: ");
+    String username = scan.nextLine();
+    System.out.println("Привет, " + username);</code></pre>
+        <p><code>nextLine()</code> — читает всю строку до Enter</p>
+
+        <h3 class="article__subsubtitle">Считывание чисел</h3>
+        <pre class="code"><code class="language-java">int num1 = scan.nextInt();     // целое число
+    byte num2 = scan.nextByte();
+    float flo = scan.nextFloat();
+    double d = scan.nextDouble();</code></pre>
+
+        <h3 class="article__subsubtitle">Считывание логического значения</h3>
+        <pre class="code"><code class="language-java">boolean b = scan.nextBoolean(); // true или false</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">Очистка буфера Scanner</h2>
+        <p class="warning">
+            <strong>Проблема:</strong> После <code>nextInt()</code>, <code>nextFloat()</code> и т.д. в буфере остаётся символ перевода строки <code>\n</code>.<br>
+            Из-за этого следующий <code>nextLine()</code> сразу «съедает» пустую строку.
+        </p>
+
+        <h3 class="article__subsubtitle">Решение — очистка буфера</h3>
+        <pre class="code"><code class="language-java">System.out.print("Введите ваш возраст: ");
+    int age = scan.nextInt();
+    scan.nextLine(); // ← ОЧИЩАЕМ БУФЕР!
+
+    System.out.print("Введите ваше имя: ");
+    String name = scan.nextLine();
+
+    System.out.println("Возраст: " + age + ", Имя: " + name);</code></pre>
+    </section>
+    <section class="article__section">
+        <h2 class="article__subtitle">ВАЖНО!</h2>
+        <p class="tip">
+            После использования <code>Scanner</code> желательно закрыть его:
+        </p>
+        <pre class="code"><code class="language-java">scan.close();</code></pre>
+    </section>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">© 2025 JavaLib — Учись и практикуйся</div>
+    </footer>
+
+</body>
+</html>
+        *** End Patch

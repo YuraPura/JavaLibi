@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Массивы в Java</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script defer src="../scripts/scripts.js"></script>
+    <meta name="description" content="Массивы в Java — примеры и пояснения" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="../index.html">JavaLib</a>
+            <button class="nav-toggle" aria-label="Меню">☰</button>
+            <nav class="nav" id="site-nav">
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+<article class="article card fade-in">
+    <header>
+        <h1 class="article__title">Массивы в Java</h1>
+    </header>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">1. Массивы в Java</h2>
+
+        <h3 class="article__subsubtitle">1.1 Что такое массив?</h3>
+        <p>Массив — структура данных, хранящая несколько элементов одного типа. Размер фиксированный.</p>
+
+        <h3 class="article__subsubtitle">1.2 Объявление массива</h3>
+        <pre class="code"><code class="language-java">// Вариант 1
+    int[] arr = new int[5];
+
+    // Вариант 2
+    int arr[] = new int[5];</code></pre>
+
+        <h3 class="article__subsubtitle">1.3 Инициализация массива</h3>
+        <pre class="code"><code class="language-java">int[] arr = {1, 2, 3, 4, 5};</code></pre>
+
+        <h3 class="article__subsubtitle">1.4 Доступ к элементам</h3>
+        <pre class="code"><code class="language-java">int x = arr[0];  // первый элемент
+    arr[1] = 10;     // изменение второго элемента</code></pre>
+
+        <h3 class="article__subsubtitle">1.5 Размер массива</h3>
+        <pre class="code"><code class="language-java">int size = arr.length;</code></pre>
+
+        <h3 class="article__subsubtitle">1.6 Перебор массива</h3>
+        <pre class="code"><code class="language-java">// Обычный for
+for (int i = 0; i < arr.length; i++) {
+    System.out.println(arr[i]);
+}
+
+// For-each
+for (int elem : arr) {
+    System.out.println(elem);
+}</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">2. Многомерные массивы</h2>
+
+        <h3 class="article__subsubtitle">2.1 Объявление</h3>
+        <pre class="code"><code class="language-java">int[][] matrix = new int[3][4]; // 3 строки × 4 столбца</code></pre>
+
+        <h3 class="article__subsubtitle">2.2 Инициализация</h3>
+        <pre class="code"><code class="language-java">int[][] matrix = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};</code></pre>
+
+        <h3 class="article__subsubtitle">2.3 Доступ к элементам</h3>
+        <pre class="code"><code class="language-java">int element = matrix[1][2]; // строка 1, колонка 2
+    matrix[0][0] = 10;</code></pre>
+
+        <h3 class="article__subsubtitle">2.4 Перебор</h3>
+        <pre class="code"><code class="language-java">for (int i = 0; i < matrix.length; i++) {
+    for (int j = 0; j < matrix[i].length; j++) {
+        System.out.print(matrix[i][j] + " ");
+    }
+    System.out.println();
+}</code></pre>
+
+        <h3 class="article__subsubtitle">2.5 Нерегулярные массивы</h3>
+        <pre class="code"><code class="language-java">int[][] irregular = {
+    {1, 2, 3},
+    {4, 5},
+    {6, 7, 8, 9}
+};</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">3. Особенности массивов в Java</h2>
+        <ul class="list list_unordered">
+            <li>Фиксированный размер (нельзя изменить после создания)</li>
+            <li>Нулевая инициализация: <code>int[] → 0</code>, объекты → <code>null</code></li>
+            <li>Могут быть примитивных и ссылочных типов</li>
+        </ul>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">4. Заключение</h2>
+        <p>Массивы — мощный инструмент для работы с данными. Эффективный доступ по индексу, но ограничение — фиксированный размер. Для динамических коллекций используйте <code>ArrayList</code> и другие коллекции.</p>
+    </section>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">© 2025 JavaLib — Учись и практикуйся</div>
+    </footer>
+</body>
+</html>

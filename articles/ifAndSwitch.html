@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Условные конструкции в Java</title>
+</head>
+<body>
+
+<article class="article">
+    <header>
+        <h1 class="article__title">Условные конструкции в Java</h1>
+    </header>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">1. Оператор if</h2>
+        <pre class="code"><code class="language-java">if (условие) {
+    // Код выполнится, если условие истинно
+}</code></pre>
+
+        <h3 class="article__subsubtitle">Пример</h3>
+        <pre class="code"><code class="language-java">int age = 18;
+if (age >= 18) {
+    System.out.println("Вы совершеннолетний.");
+}</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">2. Оператор if-else</h2>
+        <pre class="code"><code class="language-java">if (условие) {
+    // истинно
+} else {
+    // ложно
+}</code></pre>
+
+        <h3 class="article__subsubtitle">Пример</h3>
+        <pre class="code"><code class="language-java">int age = 16;
+if (age >= 18) {
+    System.out.println("Вы совершеннолетний.");
+} else {
+    System.out.println("Вы несовершеннолетний.");
+}</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">3. Оператор if-else if-else</h2>
+        <pre class="code"><code class="language-java">if (условие1) {
+    // ...
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Условные конструкции в Java</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script defer src="../scripts/scripts.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="../index.html">JavaLib</a>
+            <button class="nav-toggle" aria-label="Меню">☰</button>
+            <nav class="nav" id="site-nav">
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+<article class="article card fade-in">
+    <header>
+        <h1 class="article__title">Условные конструкции в Java</h1>
+    </header>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">1. Оператор if</h2>
+        <pre class="code"><code class="language-java">if (условие) {
+    // Код выполнится, если условие истинно
+}</code></pre>
+
+        <h3 class="article__subsubtitle">Пример</h3>
+        <pre class="code"><code class="language-java">int age = 18;
+if (age >= 18) {
+    System.out.println("Вы совершеннолетний.");
+}
+</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">2. Оператор if-else</h2>
+        <pre class="code"><code class="language-java">if (условие) {
+    // истинно
+} else {
+    // ложно
+}</code></pre>
+
+        <h3 class="article__subsubtitle">Пример</h3>
+        <pre class="code"><code class="language-java">int age = 16;
+if (age >= 18) {
+    System.out.println("Вы совершеннолетний.");
+} else {
+    System.out.println("Вы несовершеннолетний.");
+}
+</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">3. Оператор if-else if-else</h2>
+        <pre class="code"><code class="language-java">if (условие1) {
+    // ...
+} else if (условие2) {
+    // ...
+} else {
+    // ни одно условие не выполнилось
+}</code></pre>
+
+        <h3 class="article__subsubtitle">Пример</h3>
+        <pre class="code"><code class="language-java">int age = 25;
+if (age < 18) {
+    System.out.println("Вы несовершеннолетний.");
+} else if (age < 65) {
+    System.out.println("Вы взрослый человек.");
+} else {
+    System.out.println("Вы пенсионер.");
+}
+</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">4. Тернарный оператор</h2>
+        <p>Краткая запись <code>if-else</code></p>
+        <pre class="code"><code class="language-java">переменная = (условие) ? значение1 : значение2;</code></pre>
+
+        <h3 class="article__subsubtitle">Пример</h3>
+        <pre class="code"><code class="language-java">int age = 20;
+String status = (age >= 18) ? "Совершеннолетний" : "Несовершеннолетний";
+System.out.println(status);</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">5. Оператор switch</h2>
+        <pre class="code"><code class="language-java">switch (переменная) {
+    case значение1:
+        // код
+        break;
+    case значение2:
+        // код
+        break;
+    default:
+        // если ничего не подошло
+}</code></pre>
+
+        <h3 class="article__subsubtitle">Пример</h3>
+        <pre class="code"><code class="language-java">int day = 3;
+switch (day) {
+    case 1:
+        System.out.println("Понедельник");
+        break;
+    case 2:
+        System.out.println("Вторник");
+        break;
+    case 3:
+        System.out.println("Среда");
+        break;
+    default:
+        System.out.println("Некорректный день недели");
+}
+</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">6. Вложенные условные операторы</h2>
+        <pre class="code"><code class="language-java">int num = 10;
+if (num > 0) {
+    if (num % 2 == 0) {
+        System.out.println("Число положительное и четное.");
+    } else {
+        System.out.println("Число положительное, но нечетное.");
+    }
+} else {
+    System.out.println("Число не является положительным.");
+}
+</code></pre>
+    </section>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">© 2025 JavaLib — Учись и практикуйся</div>
+    </footer>
+</body>
+</html>

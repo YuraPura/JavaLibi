@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основные типы данных в Java</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script defer src="../scripts/scripts.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="../index.html">JavaLib</a>
+            <button class="nav-toggle" aria-label="Меню">☰</button>
+            <nav class="nav" id="site-nav">
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                        <li><a href="../index.html">Главная</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+<article class="article card fade-in">
+    <header>
+        <h1 class="article__title">Основные типы данных в Java</h1>
+    </header>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">Целочисленные типы данных</h2>
+
+        <h3 class="article__subsubtitle">byte</h3>
+        <ul class="list list_unordered">
+            <li><strong>Диапазон:</strong> от <code>-128</code> до <code>127</code></li>
+            <li><strong>Память:</strong> занимает <strong>1 байт</strong></li>
+        </ul>
+
+        <h3 class="article__subsubtitle">short</h3>
+        <ul class="list list_unordered">
+            <li><strong>Диапазон:</strong> от <code>-32 768</code> до <code>32 767</code></li>
+            <li><strong>Память:</strong> занимает <strong>2 байта</strong></li>
+        </ul>
+
+        <h3 class="article__subsubtitle">int <em>(самый популярный тип данных)</em></h3>
+        <ul class="list list_unordered">
+            <li><strong>Диапазон:</strong> от <code>-2 147 483 648</code> до <code>2 147 483 647</code></li>
+            <li><strong>Память:</strong> занимает <strong>4 байта</strong></li>
+        </ul>
+
+        <h3 class="article__subsubtitle">long</h3>
+        <ul class="list list_unordered">
+            <li><strong>Диапазон:</strong> от <code>-9 223 372 036 854 775 808</code> до <code>9 223 372 036 854 775 807</code></li>
+            <li><strong>Память:</strong> занимает <strong>8 байт</strong></li>
+            <li><strong>Примечание:</strong> для литерала добавляют <code>L</code></li>
+        </ul>
+        <pre class="code"><code class="language-java">long bigNumber = 10000000000L;</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">Типы данных для дробных чисел</h2>
+
+        <h3 class="article__subsubtitle">float</h3>
+        <ul class="list list_unordered">
+            <li><strong>Память:</strong> занимает <strong>4 байта</strong></li>
+            <li><strong>Особенность:</strong> обязательно добавлять <code>f</code> в конце</li>
+        </ul>
+        <pre class="code"><code class="language-java">float num = 1.01f;</code></pre>
+
+        <h3 class="article__subsubtitle">double</h3>
+        <ul class="list list_unordered">
+            <li><strong>Память:</strong> занимает <strong>8 байт</strong></li>
+            <li><strong>Особенность:</strong> позволяет хранить большое количество цифр</li>
+        </ul>
+        <pre class="code"><code class="language-java">double preciseNumber = 3.141592653589793;</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">Типы данных для строк</h2>
+
+        <h3 class="article__subsubtitle">char</h3>
+        <p><strong>Описание:</strong> хранит <strong>один символ</strong> в одинарных кавычках</p>
+        <pre class="code"><code class="language-java">char letter = 'm';</code></pre>
+
+        <h3 class="article__subsubtitle">String</h3>
+        <p><strong>Описание:</strong> хранит строку символов в двойных кавычках</p>
+        <pre class="code"><code class="language-java">String greeting = "Hello, Java!";</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">Логический тип данных</h2>
+
+        <h3 class="article__subsubtitle">boolean</h3>
+        <p><strong>Описание:</strong> хранит только <code>true</code> или <code>false</code></p>
+        <pre class="code"><code class="language-java">boolean isJavaFun = true;</code></pre>
+    </section>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">© 2025 JavaLib — Учись и практикуйся</div>
+    </footer>
+
+</body>
+</html>

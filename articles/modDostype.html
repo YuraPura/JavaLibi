@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модификаторы доступа в Java</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script defer src="../scripts/scripts.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="../index.html">JavaLib</a>
+            <button class="nav-toggle" aria-label="Меню">☰</button>
+            <nav class="nav" id="site-nav">
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+<article class="article card fade-in">
+    <header>
+        <h1 class="article__title">Модификаторы доступа в Java</h1>
+        <p>Определяют видимость классов, методов и полей. Главная цель — <strong>инкапсуляция</strong>.</p>
+    </header>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">Основные модификаторы доступа</h2>
+
+        <div class="table__wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Модификатор</th>
+                        <th>Где видно</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>public</code></td><td>Везде (все классы, все пакеты)</td></tr>
+                    <tr><td><code>protected</code></td><td>Тот же класс + наследники + тот же пакет</td></tr>
+                    <tr><td><em>default</em> (нет слова)</td><td>Только внутри того же пакета</td></tr>
+                    <tr><td><code>private</code></td><td>Только внутри того же класса</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">1. public</h2>
+        <pre class="code"><code class="language-java">public class Car {
+    public String model;           // видно везде
+    public void start() { ... }    // видно везде
+}</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">2. protected</h2>
+        <p>Доступен в том же пакете и в наследниках (даже в других пакетах).</p>
+        <pre class="code"><code class="language-java">protected String vin;           // видно наследникам
+    protected void checkEngine() { ... }</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">3. default (package-private)</h2>
+        <p>Пишется без модификатора.</p>
+        <pre class="code"><code class="language-java">class Logger {                     // видно только в пакете
+    void log(String msg) { ... }   // тоже только в пакете
+}</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">4. private</h2>
+        <p>Только внутри текущего класса — идеально для инкапсуляции.</p>
+        <pre class="code"><code class="language-java">public class BankAccount {
+    private double balance;        // никто снаружи не увидит
+
+    public void deposit(double amount) {
+        if (amount > 0) balance += amount;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">Сравнение уровней доступа</h2>
+        <div class="table__wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Где проверяем</th>
+                        <th>public</th>
+                        <th>protected</th>
+                        <th>default</th>
+                        <th>private</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Тот же класс</td><td>Да</td><td>Да</td><td>Да</td><td>Да</td></tr>
+                    <tr><td>Другой класс того же пакета</td><td>Да</td><td>Да</td><td>Да</td><td>Нет</td></tr>
+                    <tr><td>Наследник в другом пакете</td><td>Да</td><td>Да</td><td>Нет</td><td>Нет</td></tr>
+                    <tr><td>Любой класс другого пакета</td><td>Да</td><td>Нет</td><td>Нет</td><td>Нет</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">Золотое правило</h2>
+        <div class="tip">
+            <strong>Всегда начинай с самого строгого доступа (private)</strong> и открывай только то, что действительно нужно:<br>
+            <code>private → protected → default → public</code>
+        </div>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">Типичные ошибки</h2>
+        <ul class="list list_unordered">
+            <li>Публичные поля (кроме <code>public static final</code>)</li>
+            <li>Забывать про <code>private</code> у полей класса</li>
+            <li>Делать всё <code>public</code> «на всякий случай»</li>
+        </ul>
+    </section>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">© 2025 JavaLib — Учись и практикуйся</div>
+    </footer>
+
+</body>
+</html>

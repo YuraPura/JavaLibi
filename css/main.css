@@ -1,0 +1,81 @@
+/* New modern main.css — layout, colors, animations */
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --muted:#9aa4b2;
+  --accent:#7c5cff;
+  --accent-2:#00d4ff;
+  --glass: rgba(255,255,255,0.04);
+  --radius:12px;
+  --max-width:1100px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;padding:0;min-height:100%;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:linear-gradient(180deg,var(--bg) 0%, #08101a 100%);
+  color:#e6eef6; -webkit-font-smoothing:antialiased;
+}
+.container{max-width:var(--max-width);margin:0 auto;padding:28px}
+
+/* Header */
+.site-header{backdrop-filter: blur(6px);background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-bottom:1px solid rgba(255,255,255,0.03)}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:700;color:var(--accent);text-decoration:none;font-size:20px}
+.nav{display:block}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:14px;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;transition:all .2s ease}
+.nav a:hover{color:#fff;background:rgba(255,255,255,0.03);transform:translateY(-2px)}
+.nav a.active{color:var(--accent);box-shadow:0 6px 18px rgba(124,92,255,0.12)}
+.nav-toggle{display:none;background:transparent;border:0;color:var(--muted);font-size:20px}
+
+/* Main */
+main{padding:36px 0}
+.hero{display:flex;align-items:center;gap:24px;margin-bottom:22px}
+.hero__title{font-size:28px;margin:0;color:#fff}
+.hero__desc{color:var(--muted);margin:0}
+
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);padding:20px;border-radius:var(--radius);box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+.article__title{margin:0 0 8px 0;font-size:22px;color:#fff}
+.article__subtitle{margin:18px 0 8px 0;color:var(--accent-2)}
+.article__section p, .article__section li{color:var(--muted);line-height:1.6}
+
+/* Code block */
+pre.code{background:#06101a;padding:12px;border-radius:10px;overflow:auto;color:#d6f0ff;border:1px solid rgba(255,255,255,0.03)}
+code{font-family: 'Fira Code', Menlo, monospace;font-size:13px}
+
+/* Tables */
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:10px;border-bottom:1px dashed rgba(255,255,255,0.03);text-align:left;color:var(--muted)}
+
+/* Footer */
+.site-footer{padding:24px 0;text-align:center;color:var(--muted);font-size:14px}
+
+/* Animations */
+.fade-in{animation:fadeIn .6s ease both}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* Responsive */
+@media (max-width:900px){
+  .nav ul{display:none;flex-direction:column;background:transparent;position:absolute;right:20px;top:64px;padding:12px;border-radius:10px}
+  .nav.open ul{display:flex;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+  .nav-toggle{display:block}
+  .container{padding:18px}
+}
+
+/* Small helpers */
+.muted{color:var(--muted)}
+.tip{background:var(--glass);padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.02);color:var(--muted)}
+
+/* Link underline animation */
+.fancy-link{position:relative;color:var(--accent);text-decoration:none}
+.fancy-link::after{content:'';position:absolute;left:0;bottom:-3px;height:2px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));transition:width .25s ease}
+.fancy-link:hover::after{width:100%}
+
+/* Accessibility focus */
+a:focus{outline:2px dashed rgba(124,92,255,0.25);outline-offset:4px}
+
+/* Responsive typography */
+@media (max-width:600px){.hero__title{font-size:20px}.article__title{font-size:18px}}

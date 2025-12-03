@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Коллекции ArrayList и LinkedList в Java</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script defer src="../scripts/scripts.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="../index.html">JavaLib</a>
+            <button class="nav-toggle" aria-label="Меню">☰</button>
+            <nav class="nav" id="site-nav">
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+<article class="article card fade-in">
+    <header>
+        <h1 class="article__title">Коллекции в Java: ArrayList и LinkedList</h1>
+        <p>Рассмотрим две популярные реализации интерфейса <code>List</code> из Java Collections Framework.</p>
+    </header>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">1. ArrayList</h2>
+        <p><strong>ArrayList</strong> — динамический массив. Быстрый доступ по индексу.</p>
+
+        <h3 class="article__subsubtitle">Особенности:</h3>
+        <ul class="list list_unordered">
+            <li>Динамический размер — автоматически расширяется</li>
+            <li>Быстрый доступ по индексу (O(1))</li>
+            <li>Медленная вставка/удаление в середине (нужно сдвигать элементы)</li>
+        </ul>
+
+        <h3 class="article__subsubtitle">Пример использования:</h3>
+        <pre class="code"><code class="language-java">import java.util.ArrayList;
+
+ArrayList<Integer> numbers = new ArrayList<>();
+numbers.add(5);
+numbers.add(6);
+numbers.add(2, 30); // вставка 30 на позицию 2
+
+for (Integer el : numbers) {
+    System.out.println(el);
+}
+
+// numbers.clear(); // очистка коллекции</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">2. LinkedList</h2>
+        <p><strong>LinkedList</strong> — двусвязный список. Быстрые вставки и удаления.</p>
+
+        <h3 class="article__subsubtitle">Особенности:</h3>
+        <ul class="list list_unordered">
+            <li>Каждый элемент хранит ссылки на предыдущий и следующий</li>
+            <li>Быстрая вставка/удаление в любом месте</li>
+            <li>Медленный доступ по индексу (нужно идти по цепочке)</li>
+        </ul>
+
+        <h3 class="article__subsubtitle">Пример использования:</h3>
+        <pre class="code"><code class="language-java">import java.util.LinkedList;
+
+LinkedList<Integer> numbers = new LinkedList<>();
+numbers.add(10);
+numbers.addFirst(5);
+numbers.addLast(20);
+// Методы те же, что и у ArrayList</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">3. Когда что выбирать?</h2>
+        <div class="table__wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Сценарий</th>
+                        <th>Лучше использовать</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Частый доступ по индексу, мало вставок/удалений</td><td><strong>ArrayList</strong></td></tr>
+                    <tr><td>Частые вставки/удаления в середине</td><td><strong>LinkedList</strong></td></tr>
+                    <tr><td>Нужны операции с концами списка (очередь, стек)</td><td><strong>LinkedList</strong></td></tr>
+                    <tr><td>Обычная работа со списком (90% случаев)</td><td><strong>ArrayList</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tip">
+            <strong>На практике в 95% случаев выбирают ArrayList</strong> — он быстрее и проще.
+        </div>
+    </section>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">© 2025 JavaLib — Учись и практикуйся</div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Циклы в Java</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script defer src="../scripts/scripts.js"></script>
+    <meta name="description" content="Циклы в Java — for, while, do-while" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="../index.html">JavaLib</a>
+            <button class="nav-toggle" aria-label="Меню">☰</button>
+            <nav class="nav" id="site-nav">
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+<article class="article card fade-in">
+    <header>
+        <h1 class="article__title">Циклы в Java</h1>
+        <p>Циклы используются для многократного выполнения блока кода, пока выполняется указанное условие.</p>
+    </header>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">1. Цикл for</h2>
+        <p>Используется, когда количество итераций известно заранее.</p>
+
+        <h3 class="article__subsubtitle">Синтаксис:</h3>
+        <pre class="code"><code class="language-java">for (инициализация; условие; обновление) {
+    // Код, выполняемый на каждой итерации
+}</code></pre>
+
+        <h3 class="article__subsubtitle">Пример:</h3>
+        <pre class="code"><code class="language-java">for (int i = 1; i <= 5; i++) {
+    System.out.println("Итерация: " + i);
+}</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">2. Цикл while</h2>
+        <p>Используется, когда количество итераций заранее неизвестно.</p>
+
+        <h3 class="article__subsubtitle">Синтаксис:</h3>
+        <pre class="code"><code class="language-java">while (условие) {
+    // Код выполняется, пока условие истинно
+}</code></pre>
+
+        <h3 class="article__subsubtitle">Пример:</h3>
+        <pre class="code"><code class="language-java">int i = 1;
+while (i <= 5) {
+    System.out.println("Итерация: " + i);
+    i++;
+}</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">3. Цикл do-while</h2>
+        <p>Выполняет код хотя бы один раз, даже если условие ложно.</p>
+
+        <h3 class="article__subsubtitle">Синтаксис:</h3>
+        <pre class="code"><code class="language-java">do {
+    // Код выполняется хотя бы один раз
+} while (условие);</code></pre>
+
+        <h3 class="article__subsubtitle">Пример:</h3>
+        <pre class="code"><code class="language-java">int i = 1;
+do {
+    System.out.println("Итерация: " + i);
+    i++;
+} while (i <= 5);</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">4. Операторы break и continue</h2>
+        <ul class="list list_unordered">
+            <li><code>break</code> – завершает выполнение цикла.</li>
+            <li><code>continue</code> – пропускает текущую итерацию и переходит к следующей.</li>
+        </ul>
+
+        <h3 class="article__subsubtitle">Пример использования break:</h3>
+        <pre class="code"><code class="language-java">for (int i = 1; i <= 10; i++) {
+    if (i == 5) {
+        break; // Остановит цикл на 5
+    }
+    System.out.println(i);
+}</code></pre>
+
+        <h3 class="article__subsubtitle">Пример использования continue:</h3>
+        <pre class="code"><code class="language-java">for (int i = 1; i <= 5; i++) {
+    if (i == 3) {
+        continue; // Пропустит число 3
+    }
+    System.out.println(i);
+}</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">5. Вложенные циклы</h2>
+        <p>Циклы могут находиться внутри других циклов.</p>
+
+        <h3 class="article__subsubtitle">Пример:</h3>
+        <pre class="code"><code class="language-java">for (int i = 1; i <= 3; i++) {
+    for (int j = 1; j <= 3; j++) {
+        System.out.println("i = " + i + ", j = " + j);
+    }
+}</code></pre>
+    </section>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">© 2025 JavaLib — Учись и практикуйся</div>
+    </footer>
+</body>
+</html>

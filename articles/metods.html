@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Функции (методы) в Java</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script defer src="../scripts/scripts.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="../index.html">JavaLib</a>
+            <button class="nav-toggle" aria-label="Меню">☰</button>
+            <nav class="nav" id="site-nav">
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+<article class="article card fade-in">
+    <header>
+        <h1 class="article__title">Функции (методы) в Java</h1>
+        <p>В Java функции называются <strong>методами</strong> и всегда объявляются внутри классов.</p>
+    </header>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">1. Синтаксис метода</h2>
+        <pre class="code"><code class="language-java">[модификаторы] возвращаемый_тип имя_метода([параметры]) {
+    // тело метода
+    return значение; // если не void
+}</code></pre>
+
+        <h3 class="article__subsubtitle">Пример</h3>
+        <pre class="code"><code class="language-java">public static int sum(int a, int b) {
+    return a + b;
+}</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">2. Основные компоненты</h2>
+        <ul class="list list_unordered">
+            <li><strong>Модификаторы:</strong> <code>public</code>, <code>private</code>, <code>static</code>, <code>final</code></li>
+            <li><strong>Возвращаемый тип:</strong> <code>void</code>, <code>int</code>, <code>String</code> и т.д.</li>
+            <li><strong>Параметры:</strong> входные данные</li>
+        </ul>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">3. Перегрузка методов (Overloading)</h2>
+        <p>Методы с одинаковым именем, но разными параметрами.</p>
+        <pre class="code"><code class="language-java">public static int sum(int a, int b) { return a + b; }
+    public static double sum(double a, double b) { return a + b; }
+    public static int sum(int a, int b, int c) { return a + b + c; }</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">4. Рекурсия</h2>
+        <p>Метод вызывает сам себя. Обязательно нужен базовый случай.</p>
+        <pre class="code"><code class="language-java">public static int factorial(int n) {
+    if (n == 0) return 1;           // базовый случай
+    return n * factorial(n - 1);    // рекурсивный вызов
+}</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">5. Varargs (переменное количество аргументов)</h2>
+        <pre class="code"><code class="language-java">public static int sum(int... numbers) {
+    int total = 0;
+    for (int num : numbers) {
+        total += num;
+    }
+    return total;
+}
+
+// Вызов:
+sum(1, 2, 3);        // → 6
+sum(10, 20, 30, 40); // → 100</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">6. Практические примеры</h2>
+        <pre class="code"><code class="language-java">// Максимум из двух чисел
+public static int max(int a, int b) {
+    return (a > b) ? a : b;
+}
+
+// Приветствие
+public static String hello(String name) {
+    return "Привет, " + name + "!";
+}</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">Советы по написанию методов</h2>
+        <ul class="list list_unordered">
+            <li>Давать осмысленные имена (глаголы): <code>calculateTotal</code>, <code>getUserName</code></li>
+            <li>Один метод — одна задача</li>
+            <li>Не больше 5–7 параметров</li>
+            <li>Использовать <code>private</code> для вспомогательных методов</li>
+        </ul>
+    </section>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">© 2025 JavaLib — Учись и практикуйся</div>
+    </footer>
+
+</body>
+</html>

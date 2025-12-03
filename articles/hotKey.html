@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сокращения и горячие клавиши IntelliJ IDEA для Java</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script defer src="../scripts/scripts.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="../index.html">JavaLib</a>
+            <button class="nav-toggle" aria-label="Меню">☰</button>
+            <nav class="nav" id="site-nav">
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="typebase.html">Типы</a></li>
+                    <li><a href="arrays.html">Массивы</a></li>
+                </ul>
+            </nav>
+                        <li><a href="../index.html">Главная</a></li>
+                    </ul>
+                </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+<article class="article card fade-in">
+    <header>
+        <h1 class="article__title">Сокращения и горячие клавиши IntelliJ IDEA для Java</h1>
+    </header>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">1. Live Templates (Шаблоны кода)</h2>
+        <p><strong>Предопределённые фрагменты для быстрой вставки.</strong><br>
+        Активация: ввести аббревиатуру → <kbd>Tab</kbd>.</p>
+
+        <div class="table__wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Аббревиатура</th>
+                        <th>Результат</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>psvm</code></td><td><code>public static void main(String[] args) { }</code></td></tr>
+                    <tr><td><code>sout</code></td><td><code>System.out.println();</code></td></tr>
+                    <tr><td><code>fori</code></td><td>Цикл <code>for</code> с индексом для массивов</td></tr>
+                    <tr><td><code>iter</code></td><td>Цикл <code>for-each</code> для коллекций</td></tr>
+                    <tr><td><code>soutv</code></td><td>Печать переменной: <code>System.out.println("var: " + var);</code></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p><strong>Пример:</strong></p>
+        <pre class="code"><code class="language-java">// Введите iter → Tab
+for (String item : list) {
+    // Курсор здесь
+}</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">2. Постфиксные сокращения</h2>
+        <p><strong>Оборачивают существующий код в конструкции.</strong><br>
+        Активация: <code>[выражение].[постфикс]</code> → <kbd>Tab</kbd>.</p>
+
+        <div class="table__wrapper">
+            <table class="table">
+                <thead>
+                    <tr><th>Постфикс</th><th>Результат</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>.ifn</code></td><td><code>if (var == null) { }</code></td></tr>
+                    <tr><td><code>.nn</code></td><td><code>if (var != null) { }</code> (аналог <code>.notnull</code>)</td></tr>
+                    <tr><td><code>.var</code></td><td>Создаёт переменную: <code>Type name = value;</code></td></tr>
+                    <tr><td><code>.for</code></td><td>Цикл <code>for</code> для массива/коллекции</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p><strong>Пример:</strong></p>
+        <pre class="code"><code class="language-java">user.ifn → 
+if (user == null) {
+    // Курсор здесь
+}</code></pre>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">3. Горячие клавиши</h2>
+
+        <h3 class="article__subsubtitle">Основные</h3>
+        <div class="table__wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Сочетание (Win/Linux)</th>
+                        <th>Сочетание (macOS)</th>
+                        <th>Действие</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><kbd>Ctrl + Space</kbd></td><td><kbd>Cmd + Space</kbd></td><td>Базовое автодополнение</td></tr>
+                    <tr><td><kbd>Ctrl + Shift + Enter</kbd></td><td><kbd>Cmd + Shift + Enter</kbd></td><td>Завершить конструкцию</td></tr>
+                    <tr><td><kbd>Alt + Insert</kbd></td><td><kbd>Cmd + N</kbd></td><td>Генерация кода</td></tr>
+                    <tr><td><kbd>Ctrl + O</kbd></td><td><kbd>Cmd + O</kbd></td><td>Переопределить методы</td></tr>
+                    <tr><td><kbd>Ctrl + I</kbd></td><td><kbd>Cmd + I</kbd></td><td>Реализовать методы интерфейса</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="article__subsubtitle">Дополнительные</h3>
+        <div class="table__wrapper">
+            <table class="table">
+                <tbody>
+                    <tr><td><kbd>Ctrl + Alt + L</kbd></td><td>Форматировать код</td></tr>
+                    <tr><td><kbd>Ctrl + D</kbd></td><td>Дублировать строку</td></tr>
+                    <tr><td><kbd>Ctrl + /</kbd></td><td>Закомментировать/раскомментировать</td></tr>
+                    <tr><td><kbd>Shift + F6</kbd></td><td>Переименовать с рефакторингом</td></tr>
+                    <tr><td><kbd>Ctrl + Q</kbd></td><td>Показать документацию</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="article__section">
+        <h2 class="article__subtitle">4. Настройка и советы</h2>
+
+        <h3 class="article__subsubtitle">Настройка шаблонов</h3>
+        <ol class="list list_ordered">
+            <li><code>File → Settings → Editor → Live Templates</code> (Win/Linux)<br>
+                <code>IntelliJ IDEA → Preferences → Editor → Live Templates</code> (macOS).</li>
+            <li>Создавайте кастомные шаблоны для:<br>
+                — Логирования: <code>logd</code> → <code>log.debug("Message: {}", var);</code><br>
+                — Тестов: <code>testm</code> → генерация метода теста.</li>
+        </ol>
+
+        <h3 class="article__subsubtitle">Лайфхаки</h3>
+        <ul class="list list_unordered">
+            <li><strong>Быстрый просмотр реализации:</strong> Наведите курсор → <kbd>Ctrl + Shift + I</kbd> / <kbd>Cmd + Shift + I</kbd></li>
+            <li><strong>Поиск по действиям:</strong> <kbd>Ctrl + Shift + A</kbd> / <kbd>Cmd + Shift + A</kbd></li>
+            <li><strong>Мультикурсор:</strong> <kbd>Alt + клик</kbd></li>
+        </ul>
+
+        <div class="tip">
+            <strong>Пример использования:</strong><br>
+            1. <code>psvm</code> → <kbd>Tab</kbd> → готовый main<br>
+            2. <code>new ArrayList&lt;&gt;().var</code> → <kbd>Tab</kbd> → <code>List&lt;String&gt; list = new ArrayList&lt;&gt;();</code><br>
+            3. Выделите <code>list</code> → <code>.for</code> → <kbd>Tab</kbd> → for-each
+        </div>
+    </section>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">© 2025 JavaLib — Учись и практикуйся</div>
+    </footer>
+</body>
+</html>
